@@ -1,0 +1,1 @@
+import{j as e,f as s}from"./index-DzM5sIiL.js";const l=()=>e.jsx("div",{className:"flex flex-col gap-y-4",children:e.jsx("div",{className:"card flex w-full gap-4 rounded-md bg-white p-4",children:e.jsx("div",{children:e.jsx("img",{src:s,alt:"Logoipsum",style:{width:"100px"}})})})});export{l as default};
