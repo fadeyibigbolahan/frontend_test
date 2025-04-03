@@ -6,6 +6,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      // fontFamily: {
+      //   sans: ["Poppins", "sans-serif"],
+      // },
       colors: {
         color: {
           1: "#AC6AFF",
@@ -35,7 +38,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sora)", ...fontFamily.sans],
+        sans: ["Poppins", ...fontFamily.sans],
         code: "var(--font-code)",
         grotesk: "var(--font-grotesk)",
       },
