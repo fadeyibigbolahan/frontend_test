@@ -1,89 +1,76 @@
-import { Routes, Route } from "react-router-dom";
-import SupportPage from "./pages/SupportPage";
-// import Dashboard from "./pages/Dashboard.jsx";
-// import SignUp from "./pages/SignUp.jsx";
-// import SignIn from "./pages/SignIn.jsx";
-// import Tasks from "./pages/Tasks.jsx";
-// import Team from "./pages/Team.jsx";
-// import Profile from "./pages/Profile.jsx";
-// import About from "./pages/About.jsx";
-// import ProtectedRoute from "./components/ProtectedRoute.jsx";
-// import Recharge from "./pages/Recharge.jsx";
-// import TaskDetail from "./pages/TaskDetail.jsx";
-// import Home from "./pages/Home.jsx";
-// import Transaction from "./pages/Transaction.jsx";
-// import Confirm from "./pages/Confirm.jsx";
-// import Admin from "./pages/Admin.jsx";
+import { createHashRouter, RouterProvider, Navigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { ThemeProvider } from "./contexts/theme-context";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./pages/layout";
+
+// Lazy-loaded pages (dynamically imported for better performance)
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const SigninPage = lazy(() => import("./pages/SigninPage"));
+const SignupPage = lazy(() => import("./pages/SignupPage"));
+const TransactionPage = lazy(() => import("./pages/TransactionPage"));
+const AffiliateUpgradePage = lazy(() => import("./pages/AffiliateUpgradePage"));
+const AffiliatePage = lazy(() => import("./pages/AffiliatePage"));
+const ContactVendorPage = lazy(() => import("./pages/ContactVendorPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const SupportPage = lazy(() => import("./pages/SupportPage"));
+const PaymentPage = lazy(() => import("./pages/PaymentPage"));
+const UpdateProfilePage = lazy(() => import("./pages/UpdateProfilePage"));
 
 function App() {
+  const router = createHashRouter(
+    [
+      {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        ),
+        children: [
+          { index: true, element: <DashboardPage /> },
+          { path: "transactions", element: <TransactionPage /> },
+          { path: "affiliates", element: <AffiliatePage /> },
+          { path: "affiliates-upgrade", element: <AffiliateUpgradePage /> },
+          { path: "support", element: <SupportPage /> },
+          { path: "payments", element: <PaymentPage /> },
+        ],
+      },
+      { path: "/signin", element: <SigninPage /> },
+      { path: "/signup", element: <SignupPage /> },
+      { path: "/contact-vendor", element: <ContactVendorPage /> },
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <ProtectedRoute>
+            <UpdateProfilePage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "*",
+        element: <Navigate to="/signin" replace />,
+      },
+    ],
+    {
+      basename: "/", // MUST match your GitHub repo name
+    }
+  );
+
   return (
-    // <Routes>
-    //   <Route path="/" element={<Home />} />
-    //   <Route path="/signup" element={<SignUp />} />
-    //   <Route path="/signin" element={<SignIn />} />
-    //   <Route path="/about" element={<About />} />
-    //   <Route
-    //     path="/confirm-payment"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Confirm />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/tasks"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Tasks />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/team"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Team />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/me"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Profile />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/transactions"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Transaction />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/power-page"
-    //     element={
-    //       <ProtectedRoute>
-    //         <Admin />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/details/:id"
-    //     element={
-    //       <ProtectedRoute>
-    //         <TaskDetail />
-    //       </ProtectedRoute>
-    //     }
-    //   />
-    //   {/* Wildcard route for handling undefined pages */}
-    //   <Route path="*" element={<SignIn />} />
-    // </Routes>
-    <Routes>
-      <Route path="/" element={<SupportPage />} />
-    </Routes>
+    <ThemeProvider storageKey="theme">
+      <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </ThemeProvider>
   );
 }
 
