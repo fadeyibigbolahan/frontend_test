@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import SupportPage from "./pages/SupportPage";
 // import Dashboard from "./pages/Dashboard.jsx";
 // import SignUp from "./pages/SignUp.jsx";
 // import SignIn from "./pages/SignIn.jsx";
@@ -80,9 +81,9 @@ function App() {
     //   {/* Wildcard route for handling undefined pages */}
     //   <Route path="*" element={<SignIn />} />
     // </Routes>
-    <div>
-      <p>something to show</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<SupportPage />} />
+    </Routes>
   );
 }
 
