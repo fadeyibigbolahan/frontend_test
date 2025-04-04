@@ -41,7 +41,7 @@ export const Header = ({ collapsed, setCollapsed }) => {
 
   return (
     <>
-      <header className="relative z-10 flex h-[60px] items-center justify-between bg-white px-4 shadow-md dark:bg-slate-900">
+      <header className="relative w-full z-10 flex h-[60px] items-center justify-between bg-white px-4 shadow-md dark:bg-slate-900">
         <div className="flex items-center gap-x-3">
           <button
             className="btn-ghost size-10"
@@ -76,8 +76,9 @@ export const Header = ({ collapsed, setCollapsed }) => {
       </header>
 
       {modal && (
-        <div className="absolute right-4 top-[70px] w-full max-w-xs md:max-w-sm">
-          <div className="flex flex-col rounded-md bg-white p-4 shadow-md">
+        <div className="absolute md:right-10 right-3 top-[70px] w-full max-w-xs md:max-w-sm z-10">
+          <div className="flex flex-col rounded-md bg-white p-4 shadow-md h-[300px] w-full md:w-[400px]">
+            {/* Header */}
             <div className="flex items-center justify-between border-b-2 border-gray-200 pb-2">
               <h2 className="text-md font-semibold">NOTIFICATIONS</h2>
               <button
@@ -88,23 +89,26 @@ export const Header = ({ collapsed, setCollapsed }) => {
               </button>
             </div>
 
-            {loading ? (
-              <p className="py-4 text-center">Loading notifications...</p>
-            ) : error ? (
-              <p className="py-4 text-center text-red-500">{error}</p>
-            ) : notifications.length === 0 ? (
-              <p className="py-4 text-center text-gray-500">
-                No notifications found.
-              </p>
-            ) : (
-              <ul className="mt-4 space-y-2">
-                {notifications.map((notification, index) => (
-                  <li key={index} className="rounded-md border p-2 text-sm">
-                    {notification.message}
-                  </li>
-                ))}
-              </ul>
-            )}
+            {/* Content Wrapper with Scroll */}
+            <div className="flex-1 overflow-y-auto mt-2">
+              {loading ? (
+                <p className="py-4 text-center">Loading notifications...</p>
+              ) : error ? (
+                <p className="py-4 text-center text-red-500">{error}</p>
+              ) : notifications.length === 0 ? (
+                <p className="py-4 text-center text-gray-500">
+                  No notifications found.
+                </p>
+              ) : (
+                <ul className="space-y-2">
+                  {notifications.map((notification, index) => (
+                    <li key={index} className="rounded-md border p-2 text-sm">
+                      {notification.message}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         </div>
       )}

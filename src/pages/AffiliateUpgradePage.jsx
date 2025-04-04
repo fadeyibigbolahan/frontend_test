@@ -67,9 +67,9 @@ const AffiliateUpgradePage = () => {
 
   return (
     <div className="flex flex-col gap-y-4">
-      <h1 className="title">Affiliate Upgrade</h1>
+      <h1 className="title">Package Upgrade</h1>
       <div className="flex flex-col gap-y-4">
-        <h2 className="text-sm font-semibold md:text-lg">
+        <h2 className="text-xs font-semibold md:text-lg">
           Select a package for your FWG Account upgrade
         </h2>
 
@@ -79,12 +79,12 @@ const AffiliateUpgradePage = () => {
           <p className="text-red-500">{error}</p>
         ) : (
           <div className="flex w-full flex-col items-center justify-between md:flex-row">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:w-[420px]">
+            <div className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 md:w-[420px]">
               {packages.map((p, index) => (
                 <div
                   onClick={() => setClickedPackage(p)}
                   key={index}
-                  className={`relative flex w-[170px] cursor-pointer flex-row gap-2 rounded-md border bg-white p-2 hover:bg-[#22C55E50] md:w-[200px] ${
+                  className={`relative flex w-full cursor-pointer flex-row gap-2 rounded-md border bg-white p-2 hover:bg-[#22C55E50] md:w-[200px] ${
                     clickedPackage?._id === p?._id
                       ? "border-2 border-green-400"
                       : ""
@@ -107,9 +107,9 @@ const AffiliateUpgradePage = () => {
             </div>
 
             {clickedPackage && (
-              <div className="mt-4 flex flex-col items-start justify-start gap-4 md:w-1/2">
+              <div className="mt-4 flex flex-col items-start justify-start gap-4 md:w-1/2 w-full">
                 <p className="text-gray-500">Package benefits</p>
-                <div className="flex flex-row gap-2 md:gap-4">
+                <div className="flex md:flex-row flex-col gap-2 md:gap-4">
                   <ul className="flex flex-col gap-2 md:gap-4">
                     <li className="flex items-center justify-start gap-2 text-sm">
                       <ChevronRightCircle size={16} /> {clickedPackage.bv} BV

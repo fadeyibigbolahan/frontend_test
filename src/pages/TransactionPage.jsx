@@ -37,7 +37,7 @@ const TransactionPage = () => {
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
-        <div className="mt-10 overflow-x-auto">
+        <div className="overflow-x-auto">
           {/* Table Body */}
           <div className="w-full overflow-x-auto bg-white p-4">
             {transactions.length === 0 ? (
