@@ -19,7 +19,7 @@ const SigninPage = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "username" ? value.toLowerCase().trim() : value,
+      [name]: name === "username" ? value.trim().toLowerCase() : value,
     });
 
     // ✅ Clear messages when user types
