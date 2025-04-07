@@ -35,7 +35,7 @@ const SignupPage = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "username" ? value.toLowerCase() : value,
+      [name]: name === "username" ? value.toLowerCase().trim() : value,
     });
   };
 

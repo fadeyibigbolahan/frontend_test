@@ -17,7 +17,10 @@ const SigninPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: name === "username" ? value.toLowerCase().trim() : value,
+    });
 
     // ✅ Clear messages when user types
     setError("");
