@@ -43,7 +43,6 @@ const SignupPage = () => {
     e.preventDefault();
     setError("");
 
-    // Only required fields
     if (
       !formData.name ||
       !formData.username ||
