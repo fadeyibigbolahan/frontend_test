@@ -74,46 +74,42 @@ const ProfilePage = () => {
             <p className="text-xl font-bold">{profile?.name}</p>
             <p className="mt-4 flex flex-col items-center justify-center gap-2 text-sm">
               <span className="rounded-md bg-black p-1 font-bold text-white">
-                Email:
+                Username:
               </span>{" "}
-              <span className="font-bold">{profile?.email}</span>
-            </p>
-            <p className="flex flex-col items-center justify-center gap-2 text-sm">
-              <span className="rounded-md bg-black p-1 font-bold text-white">
-                Phone number:
-              </span>{" "}
-              <span className="font-bold">{profile?.phoneNumber}</span>
+              <span className="font-bold">{profile?.username}</span>
             </p>
           </div>
         </div>
-        <div className="mt-5 flex w-full flex-col items-center justify-center gap-4 border-b-2 border-t-2 p-4 md:flex-row md:justify-evenly">
+        <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-2 border-b-2 border-t-2 p-2 md:flex-row md:justify-start">
           <div
             onClick={logout}
-            className="flex h-[100px] w-1/2 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
+            className="flex h-[100px] w-1/3 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
           >
             <LogOut size={30} />
-            <p className="text-center text-xs font-bold">LOGOUT</p>
+            <p className="text-center text-[10px] font-bold">LOGOUT</p>
           </div>
           <Link
             to="/update-profile"
-            className="flex h-[100px] w-1/2 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
+            className="flex h-[100px] w-1/3 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
           >
             <UserRoundPen size={30} />
-            <p className="text-center text-xs font-bold">UPDATE ACCOUNT</p>
+            <p className="text-center text-[10px] font-bold">UPDATE ACCOUNT</p>
           </Link>
           <Link
             to="/update-profile"
-            className="flex h-[100px] w-1/2 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
+            className="flex h-[100px] w-1/3 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
           >
             <KeyRound size={30} />
-            <p className="text-center text-xs font-bold">UPDATE PASSWORD</p>
+            <p className="text-center text-[10px] font-bold">UPDATE PASSWORD</p>
           </Link>
           <Link
             to="/affiliates-upgrade"
-            className="flex h-[100px] w-1/2 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
+            className="flex h-[100px] w-1/3 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
           >
             <CircleFadingArrowUp size={30} />
-            <p className="text-center text-xs font-bold">AFFILIATE UPGRADE</p>
+            <p className="text-center text-[10px] font-bold">
+              AFFILIATE UPGRADE
+            </p>
           </Link>
         </div>
       </div>

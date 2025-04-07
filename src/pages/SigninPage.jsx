@@ -8,7 +8,7 @@ import network from "../assets/network.jpg";
 import { url } from "../../api";
 
 const SigninPage = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(""); // ✅ Success message state
   const [loading, setLoading] = useState(false);
@@ -30,8 +30,8 @@ const SigninPage = () => {
     setSuccess("");
     setLoading(true);
 
-    if (!formData.email || !formData.password) {
-      setError("⚠️ Email and password are required");
+    if (!formData.username || !formData.password) {
+      setError("⚠️ Username and password are required");
       setLoading(false);
       return;
     }
@@ -45,7 +45,7 @@ const SigninPage = () => {
       // Save token and login user
       localStorage.setItem("token", token);
       login({
-        email: response.data.email,
+        email: response.data.email || null,
         username: response.data.username,
         role: response.data.role,
         package: response.data.package,
@@ -106,12 +106,12 @@ const SigninPage = () => {
             <form onSubmit={handleSubmit} className="w-full">
               <div className="mb-4 w-full">
                 <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  name="username"
+                  value={formData.username}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your email"
+                  placeholder="Enter your username"
                 />
               </div>
               <div className="mb-4">

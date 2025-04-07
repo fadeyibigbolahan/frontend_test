@@ -23,6 +23,10 @@ const SupportPage = () => {
               <Phone className="text-gray-500" size={15} />
               <p className="text-sm text-gray-500">+234 803 213 9983</p>
             </div>
+            <div className="flex flex-row items-center justify-start gap-2">
+              <p className="text-sm text-gray-500">WhatsApp:</p>
+              <p className="text-sm text-gray-500">+234 803 213 9983</p>
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,6 @@ const AffiliatePage = () => {
 
     const convertToTree = (userNode) => ({
       name: `@${userNode.username}`,
-      // name: `${userNode.name} (@${userNode.username})`,
       children: userNode.downline?.map(convertToTree) || [],
     });
 

@@ -20,6 +20,7 @@ const SignupPage = () => {
     password: "",
     confirmPassword: "",
   });
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -42,15 +43,15 @@ const SignupPage = () => {
     e.preventDefault();
     setError("");
 
+    // Only required fields
     if (
       !formData.name ||
       !formData.username ||
-      !formData.email ||
-      !formData.phoneNumber ||
+      !formData.packageCode ||
       !formData.password ||
       !formData.confirmPassword
     ) {
-      setError("All fields are required");
+      setError("Please fill in all required fields.");
       return;
     }
 
@@ -63,8 +64,6 @@ const SignupPage = () => {
     try {
       const response = await axios.post(`${url}users/register-user`, formData);
       console.log("Signup successful:", response.data);
-
-      // Redirect user to login page after successful signup
       navigate("/signin");
     } catch (err) {
       console.error("Signup failed:", err);
@@ -118,7 +117,7 @@ const SignupPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your full name"
+                  placeholder="Full name *"
                 />
               </div>
               <div className="mb-4">
@@ -128,7 +127,7 @@ const SignupPage = () => {
                   value={formData.username}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your username"
+                  placeholder="Username *"
                 />
               </div>
               <div className="mb-4">
@@ -138,7 +137,7 @@ const SignupPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your email"
+                  placeholder="Email (optional)"
                 />
               </div>
               <div className="mb-4">
@@ -148,7 +147,7 @@ const SignupPage = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your phone number"
+                  placeholder="Phone number (optional)"
                 />
               </div>
               <div className="mb-4">
@@ -158,7 +157,7 @@ const SignupPage = () => {
                   value={formData.packageCode}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your package code"
+                  placeholder="Package code *"
                 />
                 <p className="mt-2 text-sm text-gray-600">
                   You do not have a code?{" "}
@@ -177,7 +176,7 @@ const SignupPage = () => {
                   value={formData.password}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Enter your password"
+                  placeholder="Password"
                 />
               </div>
               <div className="mb-4">
@@ -187,7 +186,7 @@ const SignupPage = () => {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   className="mt-1 w-full rounded border bg-[#E8F0FE] p-2"
-                  placeholder="Confirm your password"
+                  placeholder="Confirm password"
                 />
               </div>
               <button
