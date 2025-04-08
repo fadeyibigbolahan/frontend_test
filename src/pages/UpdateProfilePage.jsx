@@ -56,7 +56,7 @@ const UpdateProfilePage = () => {
     <div className="flex h-screen w-screen items-center justify-center">
       <div className="mx-auto w-full rounded-md bg-white p-4 shadow-md md:w-1/2">
         <div className="flex flex-row items-start justify-between">
-          <Link to="/">
+          <Link to="/dashboard">
             <ArrowLeft />
           </Link>
           <div className="flex flex-col items-center justify-center">

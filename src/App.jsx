@@ -6,6 +6,7 @@ import Layout from "./pages/layout";
 
 // Lazy-loaded pages (dynamically imported for better performance)
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const HomePage = lazy(() => import("./pages/HomePage"));
 const SigninPage = lazy(() => import("./pages/SigninPage"));
 const SignupPage = lazy(() => import("./pages/SignupPage"));
 const TransactionPage = lazy(() => import("./pages/TransactionPage"));
@@ -20,8 +21,9 @@ const UpdateProfilePage = lazy(() => import("./pages/UpdateProfilePage"));
 function App() {
   const router = createHashRouter(
     [
+      { path: "/", element: <HomePage /> },
       {
-        path: "/",
+        path: "/dashboard",
         element: (
           <ProtectedRoute>
             <Layout />
