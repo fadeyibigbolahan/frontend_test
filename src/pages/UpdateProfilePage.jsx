@@ -45,7 +45,7 @@ const UpdateProfilePage = () => {
       );
       setMessage(response.data.message || "Profile updated successfully.");
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
       setMessage(error.response?.data?.message || "Failed to update profile.");
     }
 

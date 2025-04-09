@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
 
-import { navbarLinks } from "../constants";
+import { navbarLinks, navbarLinksAdmin } from "../constants";
 
 import foodie from "../assets/FOODIE.png";
 
@@ -9,7 +9,11 @@ import { cn } from "../utils/cn";
 
 import PropTypes from "prop-types";
 
+import { useAuth } from "../contexts/AuthContext";
+
 export const Sidebar = forwardRef(({ collapsed }, ref) => {
+  const { user, logout } = useAuth();
+
   return (
     <aside
       ref={ref}
@@ -59,6 +63,35 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
             ))}
           </nav>
         ))}
+
+        {user?.role === "admin" &&
+          navbarLinksAdmin.map((navbarLink) => (
+            <nav
+              key={navbarLink.title}
+              className={cn("sidebar-group", collapsed && "md:items-center")}
+            >
+              <p
+                className={cn(
+                  "sidebar-group-title",
+                  collapsed && "md:w-[45px]"
+                )}
+              >
+                {navbarLink.title}
+              </p>
+              {navbarLink.links.map((link) => (
+                <NavLink
+                  key={link.label}
+                  to={link.path}
+                  className={cn("sidebar-item", collapsed && "md:w-[45px]")}
+                >
+                  <link.icon size={22} className="flex-shrink-0" />
+                  {!collapsed && (
+                    <p className="whitespace-nowrap">{link.label}</p>
+                  )}
+                </NavLink>
+              ))}
+            </nav>
+          ))}
       </div>
     </aside>
   );

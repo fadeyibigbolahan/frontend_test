@@ -62,7 +62,7 @@ const SignupPage = () => {
     setLoading(true);
     try {
       const response = await axios.post(`${url}users/register-user`, formData);
-      console.log("Signup successful:", response.data);
+      // console.log("Signup successful:", response.data);
       navigate("/signin");
     } catch (err) {
       console.error("Signup failed:", err);

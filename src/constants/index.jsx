@@ -5,6 +5,8 @@ import {
   Wallet,
   Network,
   UserCheck,
+  Code,
+  CreditCard,
 } from "lucide-react";
 
 export const navbarLinks = [
@@ -55,6 +57,24 @@ export const navbarLinks = [
         label: "Support",
         icon: Headset,
         path: "/dashboard/support",
+      },
+    ],
+  },
+];
+
+export const navbarLinksAdmin = [
+  {
+    title: "Admin",
+    links: [
+      {
+        label: "Generate Codes",
+        icon: Code,
+        path: "/dashboard/generate-codes",
+      },
+      {
+        label: "Withdrawal Request",
+        icon: CreditCard,
+        path: "/dashboard/withdrawal-request",
       },
     ],
   },

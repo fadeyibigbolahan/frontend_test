@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./contexts/theme-context";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./pages/layout";
+import GeneratePackageCodesPage from "./pages/GeneratePackageCodesPage";
+import AdminWithdrawalsPage from "./pages/AdminWithdrawalsPage";
 
 // Lazy-loaded pages (dynamically imported for better performance)
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
@@ -39,6 +41,8 @@ function App() {
           { path: "affiliates-upgrade", element: <AffiliateUpgradePage /> },
           { path: "support", element: <SupportPage /> },
           { path: "payments", element: <PaymentPage /> },
+          { path: "generate-codes", element: <GeneratePackageCodesPage /> },
+          { path: "withdrawal-request", element: <AdminWithdrawalsPage /> },
         ],
       },
       { path: "/signin", element: <SigninPage /> },

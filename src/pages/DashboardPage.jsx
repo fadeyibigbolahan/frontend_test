@@ -26,7 +26,7 @@ const DashboardPage = () => {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      console.log("Token:", localStorage.getItem("token"));
+      // console.log("Token:", localStorage.getItem("token"));
 
       try {
         const response = await fetch(`${url}users/profile`, {
@@ -37,8 +37,8 @@ const DashboardPage = () => {
           },
         });
 
-        console.log("Profile Response:", response);
-        console.log("Response Status:", response.status);
+        // console.log("Profile Response:", response);
+        // console.log("Response Status:", response.status);
 
         if (!response.ok) {
           const errorText = await response.text(); // Log non-JSON responses (e.g., 401 errors)
@@ -47,7 +47,7 @@ const DashboardPage = () => {
         }
 
         const data = await response.json();
-        console.log("Profile Data:", data); // Log response data
+        // console.log("Profile Data:", data); // Log response data
         setProfile(data);
       } catch (error) {
         console.error("Error fetching profile:", error);

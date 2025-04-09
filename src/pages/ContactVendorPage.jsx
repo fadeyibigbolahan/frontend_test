@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { CircleUserRound, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
+// import { useAuth } from "../contexts/AuthContext";
 import { vendors } from "../constants";
 import whatsapp from "../assets/whatsapp.jpg";
 
 const ContactVendorPage = () => {
-  const { user, logout } = useAuth();
-  useEffect(() => {
-    console.log("userr", user);
-  }, [user]);
+  // const { user, logout } = useAuth();
+
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-[#F5F6FA]">
       <div className="relative flex h-full w-full flex-col items-center justify-start bg-white md:w-1/2">

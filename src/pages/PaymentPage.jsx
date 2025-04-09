@@ -44,7 +44,7 @@ const PaymentPage = () => {
       setAccountNumber("");
       setAccountName("");
     } catch (err) {
-      console.log("error", err.response?.data?.message);
+      // console.log("error", err.response?.data?.message);
       setError(
         err.response?.data?.message ||
           "An error occurred while submitting your request."

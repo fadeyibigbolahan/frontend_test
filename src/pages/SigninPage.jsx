@@ -43,7 +43,7 @@ const SigninPage = () => {
       const response = await axios.post(`${url}users/login-user`, formData);
 
       const { token } = response.data;
-      console.log("Auth user:", response.data);
+      // console.log("Auth user:", response.data);
 
       // Save token and login user
       localStorage.setItem("token", token);
