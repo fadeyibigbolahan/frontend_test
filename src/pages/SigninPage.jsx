@@ -60,7 +60,7 @@ const SigninPage = () => {
       // Redirect after a delay
       setTimeout(() => {
         navigate("/dashboard");
-      }, 2000);
+      }, 100);
     } catch (error) {
       console.error("Login error:", error);
       setError(
