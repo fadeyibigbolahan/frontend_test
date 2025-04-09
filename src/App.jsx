@@ -23,7 +23,7 @@ function App() {
     [
       { path: "/", element: <HomePage /> },
       {
-        path: "/dashboard",
+        path: "/",
         element: (
           <ProtectedRoute>
             <Layout />

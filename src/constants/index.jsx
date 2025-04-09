@@ -31,11 +31,6 @@ export const navbarLinks = [
         icon: Wallet,
         path: "/payments",
       },
-      // {
-      //     label: "Transfers",
-      //     icon: UserCheck,
-      //     path: "/transfers",
-      // },
     ],
   },
   {

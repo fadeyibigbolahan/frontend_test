@@ -14,7 +14,7 @@ const ContactVendorPage = () => {
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-[#F5F6FA]">
       <div className="relative flex h-full w-full flex-col items-center justify-start bg-white md:w-1/2">
         <div className="absolute top-0 flex h-4 w-full items-center justify-between gap-4 bg-[#22C55E] p-6">
-          <Link to="/dashboard">
+          <Link to="/">
             <ArrowLeft size={20} color="white" />
           </Link>
           <p className="text-xl font-bold text-white">Coupon Vendors</p>
