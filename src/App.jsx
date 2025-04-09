@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./pages/layout";
 import GeneratePackageCodesPage from "./pages/GeneratePackageCodesPage";
 import AdminWithdrawalsPage from "./pages/AdminWithdrawalsPage";
+import ProductPage from "./pages/ProductPage";
 
 // Lazy-loaded pages (dynamically imported for better performance)
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
@@ -48,6 +49,7 @@ function App() {
       { path: "/signin", element: <SigninPage /> },
       { path: "/signup", element: <SignupPage /> },
       { path: "/contact-vendor", element: <ContactVendorPage /> },
+      { path: "/product", element: <ProductPage /> },
       {
         path: "/profile",
         element: (

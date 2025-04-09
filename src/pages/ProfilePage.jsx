@@ -103,7 +103,7 @@ const ProfilePage = () => {
             <p className="text-center text-[10px] font-bold">UPDATE PASSWORD</p>
           </Link>
           <Link
-            to="/affiliates-upgrade"
+            to="/dashboard/affiliates-upgrade"
             className="flex h-[100px] w-1/3 flex-col items-center justify-center gap-2 rounded-md bg-[#22C55E50] hover:bg-black hover:text-white md:h-[100px] md:w-[150px]"
           >
             <CircleFadingArrowUp size={30} />

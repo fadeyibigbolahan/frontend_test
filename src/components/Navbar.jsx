@@ -27,6 +27,9 @@ const Navbar = () => {
         <ScrollLink to="packages" smooth={true} duration={500}>
           <li className="p-4 cursor-pointer">Packages</li>
         </ScrollLink>
+        <Link to="/product">
+          <li className="p-4">Products</li>
+        </Link>
         <Link to="/signin">
           <li className="p-4">Signin</li>
         </Link>
@@ -57,6 +60,9 @@ const Navbar = () => {
         <ScrollLink to="packages" smooth={true} duration={500}>
           <li className="p-4 border-b border-gray-600">Packages</li>
         </ScrollLink>
+        <Link to="/product">
+          <li className="p-4 border-b border-gray-600">Products</li>
+        </Link>
         <Link to="/signin">
           <li className="p-4">Signin</li>
         </Link>
