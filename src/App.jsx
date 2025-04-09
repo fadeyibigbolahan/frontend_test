@@ -21,9 +21,12 @@ const UpdateProfilePage = lazy(() => import("./pages/UpdateProfilePage"));
 function App() {
   const router = createHashRouter(
     [
-      { path: "/", element: <HomePage /> },
       {
         path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/dashboard",
         element: (
           <ProtectedRoute>
             <Layout />
@@ -59,11 +62,11 @@ function App() {
       },
       {
         path: "*",
-        element: <Navigate to="/signin" replace />,
+        element: <Navigate to="/" replace />,
       },
     ],
     {
-      basename: "/", // MUST match your GitHub repo name
+      basename: "/",
     }
   );
 

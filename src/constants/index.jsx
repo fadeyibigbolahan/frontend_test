@@ -14,7 +14,7 @@ export const navbarLinks = [
       {
         label: "Dashboard",
         icon: Home,
-        path: "/",
+        path: "/dashboard",
       },
     ],
   },
@@ -24,12 +24,12 @@ export const navbarLinks = [
       {
         label: "My Transactions",
         icon: ArrowRightLeft,
-        path: "/transactions",
+        path: "/dashboard/transactions",
       },
       {
         label: "Payments",
         icon: Wallet,
-        path: "/payments",
+        path: "/dashboard/payments",
       },
     ],
   },
@@ -39,12 +39,12 @@ export const navbarLinks = [
       {
         label: "Affiliates",
         icon: Network,
-        path: "/affiliates",
+        path: "/dashboard/affiliates",
       },
       {
         label: "Affiliates Upgrade",
         icon: UserCheck,
-        path: "/affiliates-upgrade",
+        path: "/dashboard/affiliates-upgrade",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const navbarLinks = [
       {
         label: "Support",
         icon: Headset,
-        path: "/support",
+        path: "/dashboard/support",
       },
     ],
   },
