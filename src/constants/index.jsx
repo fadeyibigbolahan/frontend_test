@@ -72,6 +72,11 @@ export const navbarLinksAdmin = [
         path: "/dashboard/generate-codes",
       },
       {
+        label: "Add Earning",
+        icon: CreditCard,
+        path: "/dashboard/add-earning",
+      },
+      {
         label: "Withdrawal Request",
         icon: CreditCard,
         path: "/dashboard/withdrawal-request",

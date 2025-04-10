@@ -6,6 +6,7 @@ import Layout from "./pages/layout";
 import GeneratePackageCodesPage from "./pages/GeneratePackageCodesPage";
 import AdminWithdrawalsPage from "./pages/AdminWithdrawalsPage";
 import ProductPage from "./pages/ProductPage";
+import AddEarningPage from "./pages/AddEarningPage";
 
 // Lazy-loaded pages (dynamically imported for better performance)
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
@@ -44,6 +45,7 @@ function App() {
           { path: "payments", element: <PaymentPage /> },
           { path: "generate-codes", element: <GeneratePackageCodesPage /> },
           { path: "withdrawal-request", element: <AdminWithdrawalsPage /> },
+          { path: "add-earning", element: <AddEarningPage /> },
         ],
       },
       { path: "/signin", element: <SigninPage /> },
