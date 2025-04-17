@@ -30,7 +30,7 @@ const AffiliatePage = () => {
     if (!data?.user) return null;
 
     const convertToTree = (userNode) => ({
-      name: `@${userNode.username}`,
+      name: `@${userNode.username} (${userNode.bv}BV)`,
       children: userNode.downline?.map(convertToTree) || [],
     });
 
@@ -49,7 +49,8 @@ const AffiliatePage = () => {
         translate={{ x: window.innerWidth / 2, y: 100 }}
         pathFunc="step"
         collapsible={true}
-        separation={{ siblings: 1.5, nonSiblings: 2.5 }} // Increase spacing
+        separation={{ siblings: 2.5, nonSiblings: 3.5 }} // Increase spacing
+        // separation={{ siblings: 1.5, nonSiblings: 2.5 }} // Increase spacing
       />
     </div>
   );
