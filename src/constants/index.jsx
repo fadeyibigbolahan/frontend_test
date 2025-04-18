@@ -48,6 +48,11 @@ export const navbarLinks = [
         icon: UserCheck,
         path: "/dashboard/affiliates-upgrade",
       },
+      {
+        label: "My BV",
+        icon: UserCheck,
+        path: "/dashboard/my-bv",
+      },
     ],
   },
   {
