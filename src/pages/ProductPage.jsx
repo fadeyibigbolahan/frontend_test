@@ -1,10 +1,12 @@
 import React from "react";
-import food from "../assets/food.png";
+import food from "../assets/food.jpg";
 import finance from "../assets/finance.png";
+import money from "../assets/money.jpg";
 import international from "../assets/international.png";
+import trip from "../assets/trip.jpg";
 import car from "../assets/car.png";
-import appliances from "../assets/appliances.png";
-import team from "../assets/team.png";
+import appliances from "../assets/appliances.jpg";
+import team from "../assets/team.jpg";
 import Navbar from "../components/Navbar";
 
 const sections = [
@@ -16,12 +18,12 @@ const sections = [
   {
     title: "Financial Reward",
     text: "Our plan rewards you with cash bonuses at every stage, keeping you excited and motivated",
-    img: finance,
+    img: money,
   },
   {
     title: "International Trip",
     text: "Our Plan offers an exciting all expense paid International Trip Reward to members",
-    img: international,
+    img: trip,
   },
   {
     title: "Car Award",
@@ -46,7 +48,7 @@ const ProductPage = () => {
       <div className="bg-[#0A192F]">
         <Navbar />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-4">
         <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6">
           Our Products
         </h1>
@@ -64,9 +66,11 @@ const ProductPage = () => {
               alt={section.title}
               className="w-full md:w-1/2 rounded-2xl shadow-lg"
             />
-            <div className="md:w-1/2">
+            <div className="flex flex-col justify-center items-center md:items-start md:w-1/2">
               <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
-              <p className="text-gray-700">{section.text}</p>
+              <p className="text-gray-700 md:text-start text-center">
+                {section.text}
+              </p>
             </div>
           </div>
         ))}
