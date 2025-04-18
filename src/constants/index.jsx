@@ -86,6 +86,11 @@ export const navbarLinksAdmin = [
         icon: CreditCard,
         path: "/dashboard/withdrawal-request",
       },
+      {
+        label: "User's BV",
+        icon: UserCheck,
+        path: "/dashboard/user-bv",
+      },
     ],
   },
 ];
