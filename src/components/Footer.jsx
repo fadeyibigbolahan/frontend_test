@@ -10,11 +10,11 @@ import foodie from "../assets/FOODIE.png";
 
 const Footer = () => {
   return (
-    <div className="mx-auto py-16 px-4 w-full flex justify-center items-center gap-8 text-gray-300">
+    <div className="mx-auto py-16 px-4 w-full flex justify-center items-center gap-8 text-gray-300 bg-[#22C55E]">
       <div className="flex justify-center items-center flex-col">
         <img src={foodie} alt="Logoipsum" style={{ width: "100px" }} />
-        <p className="py-4">Earn, Grow & Feed the Nation!</p>
-        <div className="flex justify-between md:w-[80%] my-6">
+        <p className="py-4 text-white">Earn, Grow & Feed the Nation!</p>
+        <div className="flex justify-between md:w-[80%] my-6 text-white">
           <FaFacebookSquare size={30} />
           <FaInstagram size={30} />
           <FaTwitterSquare size={30} />

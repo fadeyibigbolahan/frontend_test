@@ -53,7 +53,7 @@ const UserBVPage = () => {
     <div className="overflow-auto p-6">
       <h2 className="text-xl font-bold mb-4">BV Referral Tree Viewer</h2>
 
-      <div className="flex gap-2 items-center mb-6">
+      <div className="flex flex-col md:flex-row gap-2 items-center mb-6">
         <input
           type="text"
           placeholder="Enter username"
@@ -78,8 +78,10 @@ const UserBVPage = () => {
           label={
             <div className="bg-blue-100 p-3 rounded shadow-md text-center border border-blue-300">
               <strong>@{tree.username}</strong>
-              <div>BV: {tree.bv}</div>
-              <div>Total BV: {tree.totalBV}</div>
+              <div className="text-sm">
+                {tree.package.name} ({tree.package.bv} bv)
+              </div>
+              <div className="text-sm">Total BV: {tree.bv}</div>
             </div>
           }
         >

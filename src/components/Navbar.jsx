@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white md:mb-20">
+    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <img src={foodie} alt="Logoipsum" style={{ width: "100px" }} />
       <ul className="hidden md:flex">
         <Link to="/">

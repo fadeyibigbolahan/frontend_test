@@ -38,11 +38,11 @@ export const navbarLinks = [
   {
     title: "Affiliates",
     links: [
-      {
-        label: "Affiliates",
-        icon: Network,
-        path: "/dashboard/affiliates",
-      },
+      // {
+      //   label: "Affiliates",
+      //   icon: Network,
+      //   path: "/dashboard/affiliates",
+      // },
       {
         label: "Affiliates Upgrade",
         icon: UserCheck,
@@ -50,7 +50,7 @@ export const navbarLinks = [
       },
       {
         label: "My BV",
-        icon: UserCheck,
+        icon: Network,
         path: "/dashboard/my-bv",
       },
     ],
@@ -88,7 +88,7 @@ export const navbarLinksAdmin = [
       },
       {
         label: "User's BV",
-        icon: UserCheck,
+        icon: Network,
         path: "/dashboard/user-bv",
       },
     ],

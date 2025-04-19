@@ -43,8 +43,10 @@ const MyBVPage = () => {
           label={
             <div className="bg-blue-100 p-3 rounded shadow-md text-center border border-blue-300">
               <strong>{tree.username}</strong>
-              <div>BV: {tree.bv}</div>
-              <div>Direct Acc BV: {tree.totalBV}</div>
+              <div className="text-sm">
+                {tree.package.name} ({tree.package.bv} bv)
+              </div>
+              <div className="text-sm">Total BV: {tree.bv}</div>
             </div>
           }
         >

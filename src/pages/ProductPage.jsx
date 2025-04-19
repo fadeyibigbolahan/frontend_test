@@ -1,5 +1,5 @@
 import React from "react";
-import food from "../assets/food.jpg";
+import food from "../assets/food.png";
 import finance from "../assets/finance.png";
 import money from "../assets/money.jpg";
 import international from "../assets/international.png";
@@ -8,6 +8,7 @@ import car from "../assets/car.png";
 import appliances from "../assets/appliances.jpg";
 import team from "../assets/team.jpg";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const sections = [
   {
@@ -74,6 +75,9 @@ const ProductPage = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center items-center mt-4 bg-[#22C55E]">
+        <Footer />
       </div>
     </>
   );

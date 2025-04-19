@@ -8,13 +8,13 @@ const Newsletter = () => {
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">
             How it works
           </h1>
-          <p className="text-center md:w-2/3">
+          <p className="text-center md:w-2/3 leading-8">
             Obtained your registration pin (E-pin) from a vendor (Click on
-            vendor's page), visit www.foodieworldglobal.com and click on
-            "Register." Fill out the registration form and submit it. After
-            submission, you will receive a welcome message with your login
-            details. You can then log in to your dashboard, officially becoming
-            a full member of the company.
+            vendor's page),
+            <br />
+            click on your upline's link or click on "Register". <br />
+            Fill out the registration form and submit it, you can then log in to
+            your dashboard, officially becoming a member of the company.
           </p>
         </div>
       </div>
