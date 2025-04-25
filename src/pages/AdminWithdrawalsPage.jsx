@@ -31,6 +31,7 @@ const AdminWithdrawalsPage = () => {
 
   const processWithdrawal = async (withdrawalId, action) => {
     const adminName = user?.username; // You can replace this with auth context if needed
+    console.log("Processing withdrawal:", withdrawalId, action, adminName);
 
     try {
       const res = await axios.post(
@@ -38,6 +39,11 @@ const AdminWithdrawalsPage = () => {
         {
           action,
           processedBy: adminName,
+        },
+        {
+          headers: {
+            Authorization: `${localStorage.getItem("token")}`, // replace `token` with your actual token variable
+          },
         }
       );
 
