@@ -33,10 +33,13 @@ const AdminWithdrawalsPage = () => {
     const adminName = user?.username; // You can replace this with auth context if needed
 
     try {
-      const res = await axios.post(`/api/process-withdrawal/${withdrawalId}`, {
-        action,
-        processedBy: adminName,
-      });
+      const res = await axios.post(
+        `${url}transactions/process-withdrawal/${withdrawalId}`,
+        {
+          action,
+          processedBy: adminName,
+        }
+      );
 
       setMessage(res.data.message);
       // Refresh the list after processing
@@ -91,7 +94,7 @@ const AdminWithdrawalsPage = () => {
                   </td>
                   <td className="p-3 border space-x-2">
                     <button
-                      className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                      className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 mb-3 md:mb-0"
                       onClick={() =>
                         processWithdrawal(withdrawal._id, "approve")
                       }
