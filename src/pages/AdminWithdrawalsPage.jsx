@@ -80,9 +80,9 @@ const AdminWithdrawalsPage = () => {
               {withdrawals.map((withdrawal) => (
                 <tr key={withdrawal._id} className="border-b hover:bg-gray-50">
                   <td className="p-3 border">
-                    {withdrawal.user?.name} <br />
+                    {withdrawal.user?.username} <br />
                     <span className="text-sm text-gray-500">
-                      {withdrawal.user?.email}
+                      {withdrawal.user?.name}
                     </span>
                   </td>
                   <td className="p-3 border">{withdrawal.amount}</td>
