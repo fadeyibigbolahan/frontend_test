@@ -81,6 +81,7 @@ const AdminWithdrawalsPage = () => {
               <tr className="bg-gray-100 text-left">
                 <th className="p-3 border">User</th>
                 <th className="p-3 border">Amount (₦)</th>
+                <th className="p-3 border">Account Details</th>
                 <th className="p-3 border">Requested At</th>
                 <th className="p-3 border">Actions</th>
               </tr>
@@ -95,6 +96,7 @@ const AdminWithdrawalsPage = () => {
                     </span>
                   </td>
                   <td className="p-3 border">{withdrawal.amount}</td>
+                  <td className="p-3 border">{withdrawal.accountDetails}</td>
                   <td className="p-3 border">
                     {new Date(withdrawal.createdAt).toLocaleString()}
                   </td>
