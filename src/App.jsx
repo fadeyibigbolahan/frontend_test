@@ -23,6 +23,7 @@ const PaymentPage = lazy(() => import("./pages/PaymentPage"));
 const UpdateProfilePage = lazy(() => import("./pages/UpdateProfilePage"));
 const MyBVPage = lazy(() => import("./pages/MyBVPage"));
 const UserBVPage = lazy(() => import("./pages/UserBVPage"));
+const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 
 function App() {
   const router = createHashRouter(
@@ -47,6 +48,7 @@ function App() {
           { path: "payments", element: <PaymentPage /> },
           { path: "generate-codes", element: <GeneratePackageCodesPage /> },
           { path: "withdrawal-request", element: <AdminWithdrawalsPage /> },
+          { path: "reset-password", element: <ResetPasswordPage /> },
           { path: "add-earning", element: <AddEarningPage /> },
           { path: "my-bv", element: <MyBVPage /> },
           { path: "user-bv", element: <UserBVPage /> },

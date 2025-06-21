@@ -7,6 +7,7 @@ import {
   UserCheck,
   Code,
   CreditCard,
+  KeyRound,
 } from "lucide-react";
 
 export const navbarLinks = [
@@ -90,6 +91,11 @@ export const navbarLinksAdmin = [
         label: "User's BV",
         icon: Network,
         path: "/dashboard/user-bv",
+      },
+      {
+        label: "Reset Password",
+        icon: KeyRound,
+        path: "/dashboard/reset-password",
       },
     ],
   },
