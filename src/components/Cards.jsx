@@ -1,148 +1,243 @@
 import React from "react";
-import { Package } from "lucide-react";
-import { Link } from "react-router-dom";
-import Single from "../assets/single.png";
-import Double from "../assets/double.png";
-import Triple from "../assets/triple.png";
+import {
+  Package,
+  Crown,
+  Star,
+  Zap,
+  TrendingUp,
+  Award,
+  Check,
+} from "lucide-react";
 
 const Cards = () => {
+  const packages = [
+    {
+      name: "Starter",
+      price: "₦5,000",
+      icon: Package,
+      color: "from-green-400 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+      volume: "20 Business Volume",
+      levels: "Earn up to Level 3",
+      featured: false,
+    },
+    {
+      name: "Gold",
+      price: "₦10,000",
+      icon: Star,
+      color: "from-yellow-400 to-amber-500",
+      bgColor: "bg-yellow-50",
+      borderColor: "border-yellow-200",
+      volume: "40 Business Volume",
+      levels: "Earn up to Level 4",
+      featured: false,
+    },
+    {
+      name: "Diamond",
+      price: "₦20,000",
+      icon: Zap,
+      color: "from-blue-400 to-cyan-500",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      volume: "80 Business Volume",
+      levels: "Earn up to Level 4",
+      featured: false,
+    },
+    {
+      name: "Elite",
+      price: "₦30,000",
+      icon: TrendingUp,
+      color: "from-purple-400 to-indigo-500",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200",
+      volume: "120 Business Volume",
+      levels: "Earn up to Level 5",
+      featured: false,
+    },
+    {
+      name: "Supreme",
+      price: "₦40,000",
+      icon: Award,
+      color: "from-rose-400 to-pink-500",
+      bgColor: "bg-rose-50",
+      borderColor: "border-rose-200",
+      volume: "160 Business Volume",
+      levels: "Earn up to Level 5",
+      featured: true,
+    },
+    {
+      name: "Mega",
+      price: "₦50,000",
+      icon: Crown,
+      color: "from-orange-400 to-red-500",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+      volume: "200 Business Volume",
+      levels: "Earn up to Level 6",
+      featured: false,
+    },
+    {
+      name: "Royal",
+      price: "₦100,000",
+      icon: Crown,
+      color: "from-violet-400 to-purple-600",
+      bgColor: "bg-violet-50",
+      borderColor: "border-violet-200",
+      volume: "400 Business Volume",
+      levels: "Earn up to Level 6",
+      featured: false,
+    },
+  ];
+
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center w-full py-[50px] px-4 bg-white gap-14">
-        <p
-          id="packages"
-          className="md:text-2xl text-xl font-bold text-green-500"
-        >
-          Our Packages.
-        </p>
-        <div className="w-full mx-auto grid md:grid-cols-3 gap-8">
-          <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Starter</h2>
-            <p className="text-center text-4xl font-bold">₦5000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">20 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 3</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
+    <div className="w-full bg-gradient-to-b from-white via-gray-50 to-white py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <Package className="w-4 h-4" />
+            Flexible Packages
           </div>
-          <div className="w-full shadow-xl bg-gray-100 flex flex-col p-4 md:my-0 my-8 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Gold</h2>
-            <p className="text-center text-4xl font-bold">₦10,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">40 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 4</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
-          </div>
-          <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Diamond</h2>
-            <p className="text-center text-4xl font-bold">₦20,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">80 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 4</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
-          </div>
+          <h2
+            id="packages"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+          >
+            Choose Your Path to
+            <span className="block bg-gradient-to-r from-green-600 to-emerald-600 text-transparent bg-clip-text">
+              Financial Freedom
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Start with any package and upgrade anytime. Every package unlocks
+            unlimited referrals and growth potential.
+          </p>
         </div>
-        <div className="w-full mx-auto grid md:grid-cols-3 gap-8 mt-4">
-          <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Elite</h2>
-            <p className="text-center text-4xl font-bold">₦30,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">120 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 5</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
-          </div>
-          <div className="w-full shadow-xl bg-gray-100 flex flex-col p-4 md:my-0 my-8 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Supreme</h2>
-            <p className="text-center text-4xl font-bold">₦40,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">160 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 5</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
-          </div>
-          <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Mega</h2>
-            <p className="text-center text-4xl font-bold">₦50,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">200 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 6</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
-          </div>
-          <div className="w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
-            <Package
-              size={50}
-              className="w-20 mx-auto mt-[-3rem] bg-transparent"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">Royal</h2>
-            <p className="text-center text-4xl font-bold">₦100,000</p>
-            <div className="text-center font-medium">
-              <p className="py-2 border-b mx-8 mt-8">400 Business Volume</p>
-              <p className="py-2 border-b mx-8">Earn up to Level 6</p>
-              <p className="py-2 border-b mx-8">Unlimited Referrals</p>
-            </div>
-            <Link className="flex justify-center items-center" to="/signup">
-              <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
-                Get Started
-              </button>
-            </Link>
+
+        {/* Pricing Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => {
+            const Icon = pkg.icon;
+            return (
+              <div
+                key={index}
+                className={`relative group ${
+                  pkg.featured ? "lg:scale-105" : ""
+                }`}
+              >
+                {/* Featured Badge */}
+                {pkg.featured && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-rose-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+
+                <div
+                  className={`relative h-full bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 ${
+                    pkg.featured ? "border-rose-300" : pkg.borderColor
+                  }`}
+                >
+                  {/* Gradient Background Effect */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${pkg.color}`}
+                  ></div>
+
+                  <div className="p-8">
+                    {/* Icon */}
+                    <div
+                      className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${pkg.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <Icon className="w-8 h-8 text-white" strokeWidth={2} />
+                    </div>
+
+                    {/* Package Name */}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {pkg.name}
+                    </h3>
+
+                    {/* Price */}
+                    <div className="mb-6">
+                      <span className="text-5xl font-bold text-gray-900">
+                        {pkg.price}
+                      </span>
+                      <span className="text-gray-500 ml-2">one-time</span>
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-4 mb-8">
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`w-5 h-5 rounded-full bg-gradient-to-br ${pkg.color} flex items-center justify-center flex-shrink-0 mt-0.5`}
+                        >
+                          <Check
+                            className="w-3 h-3 text-white"
+                            strokeWidth={3}
+                          />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          {pkg.volume}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`w-5 h-5 rounded-full bg-gradient-to-br ${pkg.color} flex items-center justify-center flex-shrink-0 mt-0.5`}
+                        >
+                          <Check
+                            className="w-3 h-3 text-white"
+                            strokeWidth={3}
+                          />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          {pkg.levels}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`w-5 h-5 rounded-full bg-gradient-to-br ${pkg.color} flex items-center justify-center flex-shrink-0 mt-0.5`}
+                        >
+                          <Check
+                            className="w-3 h-3 text-white"
+                            strokeWidth={3}
+                          />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          Unlimited Referrals
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <button
+                      className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
+                        pkg.featured
+                          ? "bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-lg hover:shadow-rose-500/50 hover:scale-105"
+                          : `bg-gradient-to-r ${pkg.color} text-white shadow-md hover:shadow-lg hover:scale-105`
+                      }`}
+                    >
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-8 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              Not sure which package is right for you?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Start with any package and upgrade anytime as your business grows.
+              All packages include our full support system.
+            </p>
+            <button className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-green-500/50">
+              Contact Us for Guidance
+            </button>
           </div>
         </div>
       </div>
