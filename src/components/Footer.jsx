@@ -34,21 +34,6 @@ const Footer = () => {
               food security. Join thousands building sustainable income and
               contributing to a hunger-free Africa.
             </p>
-
-            {/* Newsletter Signup */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-md">
-              <h4 className="font-semibold mb-3 text-white">Stay Updated</h4>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-green-200 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                <button className="bg-white text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center gap-2">
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
